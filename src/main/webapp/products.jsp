@@ -37,6 +37,21 @@
             margin-bottom: 20px;
         }
 
+        /* Adjust form container styling */
+        td form {
+            display: flex;
+            align-items: center;
+            gap: 10px; /* Adds spacing between input and button */
+            justify-content: center; /* Center the elements within the form */
+        }
+
+        input[type="number"] {
+            width: 60px; /* Slightly wider for better spacing */
+            padding: 5px;
+            margin-right: 8px; /* Adds space between input and submit button */
+            text-align: center; /* Centers the number within the input */
+        }
+
         th, td {
             padding: 12px;
             text-align: left;

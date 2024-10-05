@@ -9,7 +9,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7969e426-5daf-4ad4-9279-447f5d0285ea" name="Changes" comment="" />
+    <list default="true" id="7969e426-5daf-4ad4-9279-447f5d0285ea" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/products.jsp" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,6 +24,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -54,9 +59,10 @@
     "Application.TestConnection.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Tomcat Server.Tomcat 10.1.30.executor": "Run",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Javaprogram/WebShop",
+    "last_opened_file_path": "C:/Users/gemin/Documents/GitHub/WebShop",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -249,6 +255,7 @@
       <workItem from="1728037341699" duration="9939000" />
       <workItem from="1728053387855" duration="6903000" />
       <workItem from="1728155988604" duration="1142000" />
+      <workItem from="1728159136942" duration="337000" />
     </task>
     <servers />
   </component>
