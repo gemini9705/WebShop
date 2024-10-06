@@ -4,12 +4,10 @@
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
 
-    <!-- Definiera välkomstsida -->
     <welcome-file-list>
         <welcome-file>login.jsp</welcome-file>
     </welcome-file-list>
 
-    <!-- Mappa LoginServlet -->
     <servlet>
         <servlet-name>LoginServlet</servlet-name>
         <servlet-class>org.example.webshop.controller.LoginServlet</servlet-class>
@@ -18,7 +16,7 @@
         <servlet-name>LoginServlet</servlet-name>
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
-    <!-- Mappa ProductServlet -->
+
     <servlet>
         <servlet-name>ProductServlet</servlet-name>
         <servlet-class>org.example.webshop.controller.ProductServlet</servlet-class>
@@ -27,8 +25,5 @@
         <servlet-name>ProductServlet</servlet-name>
         <url-pattern>/products</url-pattern>
     </servlet-mapping>
-
-
-
 
 </web-app>

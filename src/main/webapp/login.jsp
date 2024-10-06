@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #e0f7df; /* Ljusgrön bakgrund */
+            background-color: #e0f7df;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -21,15 +21,15 @@
             padding: 30px;
             border-radius: 10px;
             box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
-            width: 360px; /* Öka bredden ytterligare */
+            width: 360px;
             text-align: center;
         }
 
         h2 {
             margin-bottom: 20px;
-            font-size: 18px; /* Minska fontstorleken något */
-            line-height: 1.3; /* Justera linjeavståndet */
-            white-space: normal; /* Tillåt text att wrapa */
+            font-size: 18px;
+            line-height: 1.3;
+            white-space: normal;
         }
 
         label {
@@ -80,7 +80,7 @@
         <input type="submit" value="Logga in">
     </form>
 
-    <!-- Visa felmeddelande om fel användarnamn eller lösenord -->
+
     <%
         String error = request.getParameter("error");
         if (error != null) {

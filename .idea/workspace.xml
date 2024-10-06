@@ -9,22 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7969e426-5daf-4ad4-9279-447f5d0285ea" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="7969e426-5daf-4ad4-9279-447f5d0285ea" name="Changes" comment="JavaDoc Comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/AddToCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/AddToCartServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/CartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/CartServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/ProductServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/RemoveFromCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/RemoveFromCartServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/dao/ProductDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/dao/ProductDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/dao/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/dao/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/db/DatabaseConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/db/DatabaseConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/model/CartItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/model/CartItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/model/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/service/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/service/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/cart.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/cart.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/products.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/products.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/web.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,12 +254,24 @@
       <workItem from="1728053387855" duration="6903000" />
       <workItem from="1728155988604" duration="1142000" />
       <workItem from="1728159136942" duration="337000" />
-      <workItem from="1728222035979" duration="920000" />
+      <workItem from="1728222035979" duration="1838000" />
     </task>
+    <task id="LOCAL−00001" summary="JavaDoc Comments">
+      <option name="closed" value="true" />
+      <created>1728223112566</created>
+      <option name="number" value="LOCAL−00001" />
+      <option name="presentableId" value="LOCAL−00001" />
+      <updated>1728223112566</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="JavaDoc Comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="JavaDoc Comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

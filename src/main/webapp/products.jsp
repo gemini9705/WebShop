@@ -7,7 +7,7 @@
     <title>Produkter</title>
     <style>
         body {
-            background-color: #e8f5e9; /* Grön bakgrundsfärg */
+            background-color: #e8f5e9;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -37,19 +37,18 @@
             margin-bottom: 20px;
         }
 
-        /* Adjust form container styling */
         td form {
             display: flex;
             align-items: center;
-            gap: 10px; /* Adds spacing between input and button */
-            justify-content: center; /* Center the elements within the form */
+            gap: 10px;
+            justify-content: center;
         }
 
         input[type="number"] {
-            width: 60px; /* Slightly wider for better spacing */
+            width: 60px;
             padding: 5px;
-            margin-right: 8px; /* Adds space between input and submit button */
-            text-align: center; /* Centers the number within the input */
+            margin-right: 8px;
+            text-align: center;
         }
 
         th, td {
@@ -59,7 +58,7 @@
         }
 
         th {
-            background-color: #81c784; /* Ljusgrön rubrikfärg */
+            background-color: #81c784;
             color: #fff;
         }
 
@@ -70,7 +69,7 @@
         }
 
         input[type="submit"] {
-            background-color: #4caf50; /* Grön knappfärg */
+            background-color: #4caf50;
             color: white;
             border: none;
             padding: 8px 16px;
@@ -81,7 +80,7 @@
         }
 
         input[type="submit"]:hover {
-            background-color: #388e3c; /* Mörkare grön vid hover */
+            background-color: #388e3c;
         }
 
         a {
@@ -106,10 +105,9 @@
 <div class="container">
     <h2>Produkter</h2>
 
-    <!-- Visa meddelande om lyckad inloggning -->
+
     <p>${message != null ? message : ""}</p>
 
-    <!-- Produkttabell -->
     <table>
         <thead>
         <tr>
@@ -126,7 +124,6 @@
         </tbody>
     </table>
 
-    <!-- Länk till kundvagnen -->
     <a href="view-cart">Visa kundvagn</a>
 </div>
 

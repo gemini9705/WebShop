@@ -7,7 +7,7 @@
     <title>Din Kundvagn</title>
     <style>
         body {
-            background-color: #e8f5e9; /* Grön bakgrundsfärg */
+            background-color: #e8f5e9;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -44,7 +44,7 @@
         }
 
         th {
-            background-color: #81c784; /* Ljusgrön rubrikfärg */
+            background-color: #81c784;
             color: #fff;
         }
 
@@ -70,7 +70,6 @@
 <div class="container">
     <h2>Din Kundvagn</h2>
 
-    <!-- Produkttabell -->
     <table>
         <thead>
         <tr>
@@ -87,7 +86,7 @@
         </tbody>
     </table>
 
-    <!-- Länk tillbaka till produkterna -->
+
     <a href="products">Tillbaka till Produkter</a>
 </div>
 
