@@ -1,7 +1,6 @@
 package org.example.webshop.controller;
 
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import org.example.webshop.model.Product;
 import org.example.webshop.service.ProductService;

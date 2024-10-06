@@ -11,6 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="7969e426-5daf-4ad4-9279-447f5d0285ea" name="Changes" comment="JavaDoc Comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/ProductServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/model/CartItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,6 +256,7 @@
       <workItem from="1728222035979" duration="1838000" />
       <workItem from="1728224001520" duration="74000" />
       <workItem from="1728224198210" duration="50000" />
+      <workItem from="1728227477580" duration="758000" />
     </task>
     <task id="LOCAL−00001" summary="JavaDoc Comments">
       <option name="closed" value="true" />
