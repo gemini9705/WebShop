@@ -10,24 +10,32 @@ import org.example.webshop.model.Product;
 @WebServlet("/remove-from-cart")
 public class RemoveFromCartServlet extends HttpServlet {
 
+    /**
+     * Processes the HTTP POST request to remove a product from the shopping cart.
+     *
+     * @param request  the HttpServletRequest object that contains the request data
+     * @param response the HttpServletResponse object that will contain the response data
+     * @throws ServletException if an error occurs during the processing of the request
+     * @throws IOException      if an input or output error occurs during the processing
+     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
 
-        // Hämta produktens ID från formuläret
+        // Retrieve the product ID from the form
         int productId = Integer.parseInt(request.getParameter("productId"));
 
-        // Hämta varukorgen från sessionen
+        // Retrieve the shopping cart from the session
         List<Product> cart = (List<Product>) session.getAttribute("cart");
 
         if (cart != null) {
-            // Ta bort produkten från varukorgen baserat på produkt-ID
+            // Remove the product from the cart based on the product ID
             cart.removeIf(product -> product.getId() == productId);
         }
 
-        // Uppdatera sessionens varukorg
+        // Update the shopping cart in the session
         session.setAttribute("cart", cart);
 
-        // Skicka tillbaka användaren till varukorgen
+        // Redirect the user back to the cart view
         response.sendRedirect("view-cart");
     }
 }

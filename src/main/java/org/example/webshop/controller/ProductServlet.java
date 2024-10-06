@@ -13,11 +13,19 @@ import java.util.List;
 //@WebServlet("/products")
 public class ProductServlet extends HttpServlet {
 
+    /**
+     * Processes the HTTP GET request to display the list of products.
+     *
+     * @param request  the HttpServletRequest object that contains the request data
+     * @param response the HttpServletResponse object that will contain the response data
+     * @throws ServletException if an error occurs during the processing of the request
+     * @throws IOException      if an input or output error occurs during the processing
+     */
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         System.out.println("ProductServlet doGet() körs");
         ProductService productService = new ProductService();
 
-        // Hämta lista över produkter från servicelagret
+        // Retrieve the list of products from the service layer
         List<Product> products = null;
         try {
             products = productService.getAllProducts();
@@ -26,7 +34,7 @@ public class ProductServlet extends HttpServlet {
             throw new RuntimeException(e);
         }
 
-        // Hantera produkttabell som HTML-sträng
+        // Handle product table as an HTML string
         StringBuilder productTableHtml = new StringBuilder();
         if (products != null && !products.isEmpty()) {
             for (Product product : products) {
@@ -50,7 +58,7 @@ public class ProductServlet extends HttpServlet {
             productTableHtml.append("<tr><td colspan='6'>Inga produkter tillgängliga.</td></tr>");
         }
 
-        // Hantera sessionens meddelanden
+        // Handle session messages
         HttpSession session = request.getSession();
         String message = (String) session.getAttribute("message");
         if (message != null) {
@@ -58,10 +66,10 @@ public class ProductServlet extends HttpServlet {
             session.removeAttribute("message");
         }
 
-        // Lägg till produkttabell som HTML-sträng
+        // Add product table as an HTML string
         request.setAttribute("productTableHtml", productTableHtml.toString());
 
-        // Skicka vidare till JSP-sidan
+        // Forward the request to the JSP page
         request.getRequestDispatcher("/products.jsp").forward(request, response);
     }
 }

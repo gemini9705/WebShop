@@ -10,7 +10,13 @@ import java.sql.SQLException;
 
 public class UserDAO {
 
-    // Hämta användare baserat på användarnamn
+    /**
+     * Retrieves a user from the database based on their username.
+     *
+     * @param username the username of the user to retrieve
+     * @return the User object if found, or null if not found
+     * @throws SQLException if a database access error occurs
+     */
     public User getUserByUsername(String username) throws SQLException {
         Connection connection = DatabaseConnection.getConnection();
         String query = "SELECT * FROM Users WHERE username = ?";
@@ -18,7 +24,7 @@ public class UserDAO {
         ps.setString(1, username);
         ResultSet rs = ps.executeQuery();
 
-        // Debug: Kontrollera resultatet av frågan
+        // Debug: Check the result of the query
         System.out.println("Kör query: " + query);
         System.out.println("För användarnamn: " + username);
 
@@ -28,8 +34,13 @@ public class UserDAO {
         return null;
     }
 
-
-    // Lägg till en användare i databasen
+    /**
+     * Adds a new user to the database.
+     *
+     * @param username the username of the user to add
+     * @param password the password of the user to add
+     * @throws SQLException if a database access error occurs
+     */
     public void addUser(String username, String password) throws SQLException {
         Connection connection = DatabaseConnection.getConnection();
         String query = "INSERT INTO Users (username, password) VALUES (?, ?)";

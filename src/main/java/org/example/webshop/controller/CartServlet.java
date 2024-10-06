@@ -8,16 +8,27 @@ import org.example.webshop.model.Product;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Servlet to handle displaying the shopping cart.
+ */
 @WebServlet("/view-cart")
 public class CartServlet extends HttpServlet {
 
+    /**
+     * Processes the HTTP GET request to display the shopping cart.
+     *
+     * @param request  the HttpServletRequest object that contains the request data
+     * @param response the HttpServletResponse object that will contain the response data
+     * @throws ServletException if an error occurs during the processing of the request
+     * @throws IOException      if an input or output error occurs during the processing
+     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Hämta varukorgen från sessionen
+
         HttpSession session = request.getSession();
         List<Product> cart = (List<Product>) session.getAttribute("cart");
 
-        // Bygg HTML-tabellen för kundvagnen
+        // Build the HTML table for the cart
         StringBuilder cartTableHtml = new StringBuilder();
         if (cart != null && !cart.isEmpty()) {
             for (Product product : cart) {
@@ -36,13 +47,14 @@ public class CartServlet extends HttpServlet {
                         .append("</tr>");
             }
         } else {
+            // Display a message if the cart is empty
             cartTableHtml.append("<tr><td colspan='6'>Din kundvagn är tom.</td></tr>");
         }
 
-        // Sätt HTML-strängen som en attribut för JSP
+        // Set the cart table HTML as a request attribute
         request.setAttribute("cartTableHtml", cartTableHtml.toString());
 
-        // Vidarebefordra till JSP-sidan
+        // Forward the request to the cart.jsp page
         request.getRequestDispatcher("cart.jsp").forward(request, response);
     }
 }

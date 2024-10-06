@@ -13,35 +13,40 @@ import java.sql.SQLException;
 //@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
+    /**
+     * Processes the HTTP POST request for user login.
+     *
+     * @param request  the HttpServletRequest object that contains the request data
+     * @param response the HttpServletResponse object that will contain the response data
+     * @throws ServletException if an error occurs during the processing of the request
+     * @throws IOException      if an input or output error occurs during the processing
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // Retrieve username and password from the request
         String username = request.getParameter("username");
         String password = request.getParameter("password");
 
         UserService userService = new UserService();
         try {
-            // Hämta användare från databasen via service-lagret
+            // Fetch user by username
             User user = userService.getUserByUsername(username);
 
-            // Kontrollera om användare finns och lösenordet stämmer
+            // Check if user exists and password matches
             if (user != null && user.getPassword().equals(password)) {
-                // Skapa session för inloggad användare
                 HttpSession session = request.getSession();
-                session.setAttribute("user", user);
+                session.setAttribute("user", user); // Store user in session
+                session.setAttribute("message", "Lyckad inloggning!"); // Success message
 
-                // Sätt ett meddelande om att inloggningen lyckades
-                session.setAttribute("message", "Lyckad inloggning!");
-
-                // Omdirigera till produktsidan efter lyckad inloggning
-                response.sendRedirect("products");
+                response.sendRedirect("products"); // Redirect to products page
             } else {
-                // Felaktigt användarnamn eller lösenord
+                // Forward to login page with error message if credentials are invalid
                 request.setAttribute("error", "Fel användarnamn eller lösenord. Försök igen!");
                 request.getRequestDispatcher("login.jsp").forward(request, response);
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Om något går fel med databasen
+            // Forward to login page with error message if an SQL error occurs
             request.setAttribute("error", "Ett fel uppstod. Försök igen senare!");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }

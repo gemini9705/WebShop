@@ -11,13 +11,19 @@ public class DatabaseConnection {
 
     static {
         try {
-            // Försöker explicit ladda MySQL-drivrutinen
+            // Attempt to explicitly load the MySQL driver
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * Establishes a connection to the database.
+     *
+     * @return a Connection object to the database
+     * @throws SQLException if a database access error occurs
+     */
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL, USER, PASSWORD);
     }

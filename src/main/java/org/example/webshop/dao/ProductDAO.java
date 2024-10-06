@@ -12,7 +12,12 @@ import java.util.List;
 
 public class ProductDAO {
 
-    // Hämta alla produkter från databasen
+    /**
+     * Retrieves all products from the database.
+     *
+     * @return a list of all products
+     * @throws SQLException if a database access error occurs
+     */
     public List<Product> getAllProducts() throws SQLException {
         Connection connection = DatabaseConnection.getConnection();
         String query = "SELECT * FROM Products";
@@ -38,7 +43,15 @@ public class ProductDAO {
         return productList;
     }
 
-    // Lägg till en produkt i databasen
+    /**
+     * Adds a new product to the database.
+     *
+     * @param name        the name of the product
+     * @param description the description of the product
+     * @param price       the price of the product
+     * @param stock       the stock quantity of the product
+     * @throws SQLException if a database access error occurs
+     */
     public void addProduct(String name, String description, double price, int stock) throws SQLException {
         Connection connection = DatabaseConnection.getConnection();
         String query = "INSERT INTO Products (name, description, price, stock) VALUES (?, ?, ?, ?)";
@@ -53,7 +66,13 @@ public class ProductDAO {
         connection.close();
     }
 
-    // Hämta en produkt baserat på ID
+    /**
+     * Retrieves a product from the database based on its ID.
+     *
+     * @param id the ID of the product to retrieve
+     * @return the product object, or null if not found
+     * @throws SQLException if a database access error occurs
+     */
     public Product getProductById(int id) throws SQLException {
         Connection connection = DatabaseConnection.getConnection();
         String query = "SELECT * FROM Products WHERE id = ?";
