@@ -9,9 +9,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7969e426-5daf-4ad4-9279-447f5d0285ea" name="Changes" comment="Service update">
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/LoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/LoginServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/ProductServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/ProductServlet.java" afterDir="false" />
+    <list default="true" id="7969e426-5daf-4ad4-9279-447f5d0285ea" name="Changes" comment="Javadoc comments adjustments">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/AddToCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/AddToCartServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,31 +44,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MainUser.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Maintest.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TestConnection.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 10.1.30.executor&quot;: &quot;Run&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/mosesmohan/Documents/GitHub/WebShop&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.MainUser.executor": "Run",
+    "Application.Maintest.executor": "Run",
+    "Application.TestConnection.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Tomcat Server.Tomcat 10.1.30.executor": "Run",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/mosesmohan/Documents/GitHub/WebShop",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Javaprogram\WebShop\src\main\java\org\example\webshop\model" />
@@ -256,6 +256,7 @@
       <workItem from="1728224198210" duration="50000" />
       <workItem from="1728227477580" duration="758000" />
       <workItem from="1728249497791" duration="6946000" />
+      <workItem from="1728265056261" duration="4690000" />
     </task>
     <task id="LOCAL−00001" summary="JavaDoc Comments">
       <option name="closed" value="true" />
@@ -278,7 +279,35 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1728260968356</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Javadoc comments adjustments">
+      <option name="closed" value="true" />
+      <created>1728265263537</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1728265263537</updated>
+    </task>
+    <task id="LOCAL−00005" summary="Javadoc comments adjustments">
+      <option name="closed" value="true" />
+      <created>1728287948535</created>
+      <option name="number" value="LOCAL−00005" />
+      <option name="presentableId" value="LOCAL−00005" />
+      <updated>1728287948535</updated>
+    </task>
+    <task id="LOCAL−00006" summary="Javadoc comments adjustments">
+      <option name="closed" value="true" />
+      <created>1728288138525</created>
+      <option name="number" value="LOCAL−00006" />
+      <option name="presentableId" value="LOCAL−00006" />
+      <updated>1728288138525</updated>
+    </task>
+    <task id="LOCAL−00007" summary="Javadoc comments adjustments">
+      <option name="closed" value="true" />
+      <created>1728288498056</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1728288498056</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -287,6 +316,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="JavaDoc Comments" />
     <MESSAGE value="Service update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Service update" />
+    <MESSAGE value="Javadoc comments adjustments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Javadoc comments adjustments" />
   </component>
 </project>

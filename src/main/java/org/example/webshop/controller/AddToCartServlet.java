@@ -4,8 +4,8 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import org.example.webshop.model.Product;
-import org.example.webshop.model.User;
 import org.example.webshop.service.CartService;
+import org.example.webshop.controller.UserDTO;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -32,10 +32,10 @@ public class AddToCartServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
-        User user = (User) session.getAttribute("user");
+        UserDTO userDTO = (UserDTO) session.getAttribute("user");  // Use UserDTO instead of User
 
         // Check if the user is logged in
-        if (user != null) {
+        if (userDTO != null) {
             try {
                 // Parse the product ID and quantity from the request
                 int productId = Integer.parseInt(request.getParameter("productId"));
