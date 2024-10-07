@@ -1,4 +1,4 @@
-<%@ page import="org.example.webshop.model.Product" %>
+<%@ page import="org.example.webshop.controller.ProductDTO" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -131,9 +131,9 @@
         </thead>
         <tbody>
         <%
-            List<Product> products = (List<Product>) request.getAttribute("products");
+            List<ProductDTO> products = (List<ProductDTO>) request.getAttribute("products");
             if (products != null && !products.isEmpty()) {
-                for (Product product : products) {
+                for (ProductDTO product : products) {
         %>
         <tr>
             <td><%= product.getId() %></td>
