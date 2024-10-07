@@ -40,4 +40,20 @@ public class UserService {
     public void addUser(String username, String password) throws SQLException {
         userDAO.addUser(username, password);
     }
+
+    /**
+     * Verifies if the user's password matches.
+     *
+     * @param username the username to check
+     * @param password the password to verify
+     * @return the User object if the password is correct, or null if not
+     * @throws SQLException if a database access error occurs
+     */
+    public User verifyUser(String username, String password) throws SQLException {
+        User user = getUserByUsername(username);
+        if (user != null && user.getPassword().equals(password)) {
+            return user;
+        }
+        return null;
+    }
 }

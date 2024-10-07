@@ -9,12 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7969e426-5daf-4ad4-9279-447f5d0285ea" name="Changes" comment="JavaDoc Comments">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/AddToCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/AddToCartServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/RemoveFromCartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/webshop/controller/RemoveFromCartServlet.java" afterDir="false" />
-    </list>
+    <list default="true" id="7969e426-5daf-4ad4-9279-447f5d0285ea" name="Changes" comment="Service update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -257,7 +252,7 @@
       <workItem from="1728224001520" duration="74000" />
       <workItem from="1728224198210" duration="50000" />
       <workItem from="1728227477580" duration="758000" />
-      <workItem from="1728249497791" duration="6621000" />
+      <workItem from="1728249497791" duration="6946000" />
     </task>
     <task id="LOCAL−00001" summary="JavaDoc Comments">
       <option name="closed" value="true" />
@@ -266,7 +261,21 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1728223112566</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="Service update">
+      <option name="closed" value="true" />
+      <created>1728260914390</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1728260914390</updated>
+    </task>
+    <task id="LOCAL−00003" summary="Service update">
+      <option name="closed" value="true" />
+      <created>1728260968356</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1728260968356</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -274,6 +283,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="JavaDoc Comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="JavaDoc Comments" />
+    <MESSAGE value="Service update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Service update" />
   </component>
 </project>

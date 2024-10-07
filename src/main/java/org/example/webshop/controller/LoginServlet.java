@@ -10,7 +10,7 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
-//@WebServlet("/login")
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
     /**
@@ -29,11 +29,10 @@ public class LoginServlet extends HttpServlet {
 
         UserService userService = new UserService();
         try {
-            // Fetch user by username
-            User user = userService.getUserByUsername(username);
+            // Använd UserService för att verifiera användaren
+            User user = userService.verifyUser(username, password);
 
-            // Check if user exists and password matches
-            if (user != null && user.getPassword().equals(password)) {
+            if (user != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user); // Store user in session
                 session.setAttribute("message", "Lyckad inloggning!"); // Success message
