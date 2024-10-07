@@ -6,36 +6,30 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.util.List;
 import org.example.webshop.model.Product;
+import org.example.webshop.service.CartService;
 
 @WebServlet("/remove-from-cart")
 public class RemoveFromCartServlet extends HttpServlet {
 
-    /**
-     * Processes the HTTP POST request to remove a product from the shopping cart.
-     *
-     * @param request  the HttpServletRequest object that contains the request data
-     * @param response the HttpServletResponse object that will contain the response data
-     * @throws ServletException if an error occurs during the processing of the request
-     * @throws IOException      if an input or output error occurs during the processing
-     */
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
 
-        // Retrieve the product ID from the form
-        int productId = Integer.parseInt(request.getParameter("productId"));
+        int productId = Integer.parseInt(request.getParameter("productId")); // Hämta produktens ID från förfrågan
 
-        // Retrieve the shopping cart from the session
-        List<Product> cart = (List<Product>) session.getAttribute("cart");
+        CartService cartService = new CartService();
+
+        // Hämta varukorgen från sessionen
+        List<Product> cart = cartService.getCartFromSession(session);
 
         if (cart != null) {
-            // Remove the product from the cart based on the product ID
-            cart.removeIf(product -> product.getId() == productId);
+            // Använd CartService för att hantera borttagningen
+            cartService.removeProductFromCart(cart, productId);
+
+            // Uppdatera varukorgen i sessionen
+            cartService.updateCartInSession(session, cart);
         }
 
-        // Update the shopping cart in the session
-        session.setAttribute("cart", cart);
-
-        // Redirect the user back to the cart view
+        // Omdirigera användaren tillbaka till varukorgsidan
         response.sendRedirect("view-cart");
     }
 }
