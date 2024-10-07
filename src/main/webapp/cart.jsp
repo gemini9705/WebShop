@@ -1,3 +1,5 @@
+<%@ page import="org.example.webshop.model.Product" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="sv">
@@ -82,10 +84,34 @@
         </tr>
         </thead>
         <tbody>
-        ${cartTableHtml}
+        <%
+            List<Product> cart = (List<Product>) request.getAttribute("cart");
+            if (cart != null && !cart.isEmpty()) {
+                for (Product product : cart) {
+        %>
+        <tr>
+            <td><%= product.getId() %></td>
+            <td><%= product.getName() %></td>
+            <td><%= product.getDescription() %></td>
+            <td><%= product.getPrice() %> kr</td>
+            <td><%= product.getStock() %></td>
+            <td>
+                <form action="remove-from-cart" method="post">
+                    <input type="hidden" name="productId" value="<%= product.getId() %>">
+                    <input type="submit" value="Ta bort">
+                </form>
+            </td>
+        </tr>
+        <%
+            }
+        } else {
+        %>
+        <tr><td colspan="6">Din kundvagn är tom.</td></tr>
+        <%
+            }
+        %>
         </tbody>
     </table>
-
 
     <a href="products">Tillbaka till Produkter</a>
 </div>

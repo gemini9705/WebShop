@@ -28,31 +28,8 @@ public class CartServlet extends HttpServlet {
         HttpSession session = request.getSession();
         List<Product> cart = (List<Product>) session.getAttribute("cart");
 
-        // Build the HTML table for the cart
-        StringBuilder cartTableHtml = new StringBuilder();
-        if (cart != null && !cart.isEmpty()) {
-            for (Product product : cart) {
-                cartTableHtml.append("<tr>")
-                        .append("<td>").append(product.getId()).append("</td>")
-                        .append("<td>").append(product.getName()).append("</td>")
-                        .append("<td>").append(product.getDescription()).append("</td>")
-                        .append("<td>").append(product.getPrice()).append(" kr</td>")
-                        .append("<td>").append(product.getStock()).append("</td>")
-                        .append("<td>")
-                        .append("<form action='remove-from-cart' method='post'>")
-                        .append("<input type='hidden' name='productId' value='").append(product.getId()).append("'>")
-                        .append("<input type='submit' value='Ta bort'>")
-                        .append("</form>")
-                        .append("</td>")
-                        .append("</tr>");
-            }
-        } else {
-            // Display a message if the cart is empty
-            cartTableHtml.append("<tr><td colspan='6'>Din kundvagn är tom.</td></tr>");
-        }
-
-        // Set the cart table HTML as a request attribute
-        request.setAttribute("cartTableHtml", cartTableHtml.toString());
+        // Skicka varukorgen som en request-attribut till JSP-filen
+        request.setAttribute("cart", cart);
 
         // Forward the request to the cart.jsp page
         request.getRequestDispatcher("cart.jsp").forward(request, response);
