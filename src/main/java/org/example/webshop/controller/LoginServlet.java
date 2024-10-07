@@ -1,8 +1,6 @@
 package org.example.webshop.controller;
 
-import org.example.webshop.model.User;
 import org.example.webshop.service.UserService;
-
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
@@ -37,12 +35,12 @@ public class LoginServlet extends HttpServlet {
         UserService userService = new UserService();
         try {
             // Use UserService to verify the user's credentials
-            User user = userService.verifyUser(username, password);
+            UserDTO userDTO = userService.verifyUser(username, password);
 
-            if (user != null) {
-                // Store user in session if verification is successful
+            if (userDTO != null) {
+                // Store UserDTO in session if verification is successful
                 HttpSession session = request.getSession();
-                session.setAttribute("user", user); // Store user in session
+                session.setAttribute("user", userDTO); // Store DTO in session
                 session.setAttribute("message", "Lyckad inloggning!"); // Success message
 
                 // Redirect to the products page

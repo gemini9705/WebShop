@@ -2,9 +2,12 @@ package org.example.webshop.service;
 
 import org.example.webshop.dao.ProductDAO;
 import org.example.webshop.model.Product;
+import org.example.webshop.controller.ProductDTO;
 
 import java.sql.SQLException;
 import java.util.List;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * Service class for managing products in the webshop.
@@ -21,14 +24,32 @@ public class ProductService {
     }
 
     /**
-     * Retrieves all products from the database.
+     * Retrieves all products from the database and converts them to DTOs.
      *
-     * @return a list of all products
+     * @return a list of all ProductDTOs
      * @throws SQLException if a database access error occurs
      */
-    public List<Product> getAllProducts() throws SQLException {
+    public List<ProductDTO> getAllProducts() throws SQLException {
         List<Product> products = productDAO.getAllProducts();
-        return products;
+        List<ProductDTO> productDTOs = new ArrayList<>();
+
+        for (Product product : products) {
+            ProductDTO productDTO = convertToDTO(product);
+            productDTOs.add(productDTO);
+        }
+
+        return productDTOs;
+    }
+
+
+    /**
+     * Converts a Product to a ProductDTO.
+     *
+     * @param product the Product to convert
+     * @return the corresponding ProductDTO
+     */
+    private ProductDTO convertToDTO(Product product) {
+        return new ProductDTO(product.getId(), product.getName(), product.getDescription(), product.getPrice(), product.getStock());
     }
 
     /**
@@ -45,13 +66,14 @@ public class ProductService {
     }
 
     /**
-     * Retrieves a product from the database based on its ID.
+     * Retrieves a product by its ID and converts it to a DTO.
      *
-     * @param id the ID of the product to retrieve
-     * @return the Product object if found, or null if not found
+     * @param id the ID of the product
+     * @return the corresponding ProductDTO if found, or null if not found
      * @throws SQLException if a database access error occurs
      */
-    public Product getProductById(int id) throws SQLException {
-        return productDAO.getProductById(id);
+    public ProductDTO getProductById(int id) throws SQLException {
+        Product product = productDAO.getProductById(id);
+        return (product != null) ? convertToDTO(product) : null;
     }
 }

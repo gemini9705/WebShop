@@ -2,6 +2,7 @@ package org.example.webshop.service;
 
 import org.example.webshop.dao.UserDAO;
 import org.example.webshop.model.User;
+import org.example.webshop.controller.UserDTO;
 
 import java.sql.SQLException;
 
@@ -20,14 +21,15 @@ public class UserService {
     }
 
     /**
-     * Retrieves a user from the database based on their username.
+     * Retrieves a user from the database based on their username and converts to DTO.
      *
      * @param username the username of the user to retrieve
-     * @return the User object if found, or null if not found
+     * @return the UserDTO object if found, or null if not found
      * @throws SQLException if a database access error occurs
      */
-    public User getUserByUsername(String username) throws SQLException {
-        return userDAO.getUserByUsername(username);
+    public UserDTO getUserByUsername(String username) throws SQLException {
+        User user = userDAO.getUserByUsername(username);
+        return (user != null) ? convertToDTO(user) : null;
     }
 
     /**
@@ -42,18 +44,28 @@ public class UserService {
     }
 
     /**
-     * Verifies if the user's password matches.
+     * Verifies if the user's password matches and returns a DTO.
      *
      * @param username the username to check
      * @param password the password to verify
-     * @return the User object if the password is correct, or null if not
+     * @return the UserDTO object if the password is correct, or null if not
      * @throws SQLException if a database access error occurs
      */
-    public User verifyUser(String username, String password) throws SQLException {
-        User user = getUserByUsername(username);
+    public UserDTO verifyUser(String username, String password) throws SQLException {
+        User user = userDAO.getUserByUsername(username);
         if (user != null && user.getPassword().equals(password)) {
-            return user;
+            return convertToDTO(user);
         }
         return null;
+    }
+
+    /**
+     * Converts a User object to a UserDTO.
+     *
+     * @param user the User to convert
+     * @return the corresponding UserDTO
+     */
+    private UserDTO convertToDTO(User user) {
+        return new UserDTO(user.getId(), user.getUsername());
     }
 }
