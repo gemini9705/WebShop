@@ -10,16 +10,23 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.sql.SQLException;
 
-
+/**
+ * Servlet to handle user login requests.
+ * This servlet processes user login by verifying the user's credentials through the UserService.
+ * If the login is successful, the user is redirected to the products page; otherwise, an error message is displayed on the login page.
+ */
+@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
     /**
      * Processes the HTTP POST request for user login.
+     * Retrieves the username and password from the request, verifies the credentials using the UserService,
+     * and stores the user in the session if login is successful. If login fails, the user is redirected back to the login page with an error message.
      *
-     * @param request  the HttpServletRequest object that contains the request data
-     * @param response the HttpServletResponse object that will contain the response data
+     * @param request  the HttpServletRequest object that contains the request the client has made of the servlet
+     * @param response the HttpServletResponse object that contains the response the servlet sends to the client
      * @throws ServletException if an error occurs during the processing of the request
-     * @throws IOException      if an input or output error occurs during the processing
+     * @throws IOException      if an input or output error occurs while the servlet is handling the request
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,15 +36,17 @@ public class LoginServlet extends HttpServlet {
 
         UserService userService = new UserService();
         try {
-            // Använd UserService för att verifiera användaren
+            // Use UserService to verify the user's credentials
             User user = userService.verifyUser(username, password);
 
             if (user != null) {
+                // Store user in session if verification is successful
                 HttpSession session = request.getSession();
                 session.setAttribute("user", user); // Store user in session
                 session.setAttribute("message", "Lyckad inloggning!"); // Success message
 
-                response.sendRedirect("products"); // Redirect to products page
+                // Redirect to the products page
+                response.sendRedirect("products");
             } else {
                 // Forward to login page with error message if credentials are invalid
                 request.setAttribute("error", "Fel användarnamn eller lösenord. Försök igen!");
