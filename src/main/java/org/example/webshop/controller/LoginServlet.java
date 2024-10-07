@@ -13,7 +13,7 @@ import java.sql.SQLException;
  * This servlet processes user login by verifying the user's credentials through the UserService.
  * If the login is successful, the user is redirected to the products page; otherwise, an error message is displayed on the login page.
  */
-@WebServlet("/login")
+//@WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
     /**

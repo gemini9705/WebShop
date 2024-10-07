@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
 
-@WebServlet("/products")
+//@WebServlet("/products")
 public class ProductServlet extends HttpServlet {
     private ProductService productService;
 
@@ -27,7 +27,7 @@ public class ProductServlet extends HttpServlet {
         try {
             List<ProductDTO> products = productService.getAllProducts();
             req.setAttribute("products", products);
-            req.getRequestDispatcher("/WEB-INF/products.jsp").forward(req, resp);
+            req.getRequestDispatcher("products.jsp").forward(req, resp);
         } catch (SQLException e) {
             throw new ServletException("Error retrieving products", e);
         }
