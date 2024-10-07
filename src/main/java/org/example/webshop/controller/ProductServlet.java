@@ -1,6 +1,7 @@
 package org.example.webshop.controller;
 
 import org.example.webshop.service.ProductService;
+import org.example.webshop.controller.ProductDTO;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -14,6 +15,12 @@ import java.util.List;
 @WebServlet("/products")
 public class ProductServlet extends HttpServlet {
     private ProductService productService;
+
+    @Override
+    public void init() throws ServletException {
+        // Initialize ProductService when the servlet is created
+        productService = new ProductService();
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
