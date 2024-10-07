@@ -1,3 +1,5 @@
+<%@ page import="org.example.webshop.model.Product" %>
+<%@ page import="java.util.List" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="sv">
@@ -105,9 +107,17 @@
 <div class="container">
     <h2>Produkter</h2>
 
+    <!-- Visa eventuellt meddelande -->
+    <%
+        String message = (String) request.getAttribute("message");
+        if (message != null) {
+    %>
+    <p><%= message %></p>
+    <%
+        }
+    %>
 
-    <p>${message != null ? message : ""}</p>
-
+    <!-- Produkttabell -->
     <table>
         <thead>
         <tr>
@@ -120,7 +130,34 @@
         </tr>
         </thead>
         <tbody>
-        ${productTableHtml}
+        <%
+            List<Product> products = (List<Product>) request.getAttribute("products");
+            if (products != null && !products.isEmpty()) {
+                for (Product product : products) {
+        %>
+        <tr>
+            <td><%= product.getId() %></td>
+            <td><%= product.getName() %></td>
+            <td><%= product.getDescription() %></td>
+            <td><%= product.getPrice() %> kr</td>
+            <td><%= product.getStock() %></td>
+            <td>
+                <form action="add-to-cart" method="post">
+                    <input type="hidden" name="productId" value="<%= product.getId() %>">
+                    <label for="quantity_<%= product.getId() %>">Antal:</label>
+                    <input type="number" id="quantity_<%= product.getId() %>" name="quantity" value="1" min="1" required>
+                    <input type="submit" value="Lägg till">
+                </form>
+            </td>
+        </tr>
+        <%
+            }
+        } else {
+        %>
+        <tr><td colspan="6">Inga produkter tillgängliga.</td></tr>
+        <%
+            }
+        %>
         </tbody>
     </table>
 
