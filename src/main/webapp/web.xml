@@ -17,7 +17,7 @@
         <url-pattern>/login</url-pattern>
     </servlet-mapping>
 
-    <servlet>
+     <servlet>
         <servlet-name>ProductServlet</servlet-name>
         <servlet-class>org.example.webshop.controller.ProductServlet</servlet-class>
     </servlet>
